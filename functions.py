@@ -9,6 +9,16 @@ moedas = {
     "Real":"BRL",
 }
 
+def byFelipe()->None:
+    print("""
+--------------------------
+|                        |
+|  Conversor de Moedas   |
+|   by \033[1;31mFelipe Clarindo   \033[0m|
+|                        |
+--------------------------
+""")
+    
 def converterMoeda(sigla1, sigla2, moeda1, moeda2, valor):
     taxa_conversao = {
         (1, 2): 1.08,  # Euro para Dólar
@@ -28,8 +38,8 @@ def converterMoeda(sigla1, sigla2, moeda1, moeda2, valor):
     if moeda1 == moeda2:
         print(f"Essa moeda convertida resultada no mesmo valor: {valor}")
     elif (moeda1, moeda2) in taxa_conversao:
-        taxa = taxa_conversao[(moeda1, moeda2)]
-        print(f"A Conversão da {sigla1} para {sigla2} é: {taxa}")
+        taxa = taxa_conversao[(moeda1, moeda2)]  
+        print(f"A Conversão da {sigla1} para {sigla2} é: {valor*taxa} \nCujo taxa é: {taxa}")
     else:
         print("Conversão não identificada.")
 
@@ -65,10 +75,10 @@ Digite de acordo com o indice!
 [3] LIBRA
 [4] REAL""")
 
-            moeda1 = int(input("Converter de: "))-1
-            moeda2 = int(input("Para: "))-1 
-
-            if moeda1 > 3 or moeda1 < 0 or moeda2 > 3 or moeda2 < 0:
+            moeda1 = int(input("Converter de: "))
+            moeda2 = int(input("Para: ")) 
+            
+            if (moeda1-1) > 3 or (moeda1-1) < 0 or (moeda2-1) > 3 or (moeda2-1) < 0:
                 raise ValueError("Indice invalido, Escolha um número de 1 a 4")
 
             showMenu()
@@ -82,7 +92,7 @@ Digite de acordo com o indice!
 
             lista = list(moedas)
 
-            converterMoeda(moedas[lista[moeda1]], moedas[lista[moeda2]], moeda1, moeda2, valor)
+            converterMoeda(moedas[lista[(moeda1-1)]], moedas[lista[(moeda2-1)]], moeda1, moeda2, valor)
 
             input("Aperte \033[1;31mENTER\033[0m para continuar...")
             
@@ -90,19 +100,31 @@ Digite de acordo com o indice!
             
             cont = str(input('Deseja continuar? Digite \033[1;32m"S"\033[0m para \033[1;32mSim\033[0m e \033[1;31m"N"\033[0m para \033[1;31mNão\033[0m \n')).strip().lower()
             if "n" in cont:
+                byFelipe()
                 print("Finalizado!")
                 break
+            else: 
+                showMenu()
                 
         except ValueError:
             print("O Valor inserido é ínvalido!")
+        
 
-def byFelipe()->None:
-    print("""
---------------------------
-|                        |
-|  Conversor de Moedas   |
-|   by \033[1;31mFelipe Clarindo   \033[0m|
-|                        |
---------------------------
-""")
+if __name__ == "__main__":
     
+    taxa_conversao = {
+        (1, 2): 1.08,  # Euro para Dólar
+        (1, 3): 0.86,  # Euro para Libra
+        (1, 4): 5.34,  # Euro para Real
+        (2, 1): 0.92,  # Dólar para Euro
+        (2, 3): 0.79,  # Dólar para Libra
+        (2, 4): 4.94,  # Dólar para Real
+        (3, 1): 1.17,  # Libra para Euro
+        (3, 2): 1.26,  # Libra para Dólar
+        (3, 4): 6.24,  # Libra para Real
+        (4, 1): 0.19,  # Real para Euro
+        (4, 2): 0.20,  # Real para Dólar
+        (4, 3): 0.16   # Real para Libra
+    }
+    taxa = taxa_conversao[(4, 2)]  
+    print(taxa)
