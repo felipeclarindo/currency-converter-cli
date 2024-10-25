@@ -10,24 +10,55 @@ Um simples conversor de moeda em Python que converte entre Euro, Dólar, Libra e
 ## Como usar
 
 1. Clone este repositório:
-```bash 
-git clone https://github.com/felipeclarindo/conversor-de-moeda.git
+
+```bash
+git clone https://github.com/felipeclarindo/currency-converter.git
 ```
-2. Navegue até o diretório do projeto: 
-```bash 
+
+2. Navegue até o diretório do projeto:
+
+```bash
 cd conversor-de-moeda
 ```
-3. Execute o programa: 
+
+3. Crie o ambiente virtual:
+
+```bash
+python -m venv .venv
+```
+
+4. Ative o ambiente virtual.
+
+```bash
+./venv/Scripts/activate.bat
+```
+
+5. Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. Execute o programa:
+
 ```bash
 python main.py
 ```
 
+7. Siga as instruções no console para interagir com o conversor.
+
 ## Contribuição
 
-Sinta-se à vontade para contribuir com novas funcionalidades ou correções de bugs. Basta seguir estes passos:
+Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-1. Fork o repositório
-2. Crie uma branch para sua feature (`git checkout -b minha-feature`)
-3. Faça o commit das suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Faça o push para a branch (`git push origin minha-feature`)
-5. Crie um novo Pull Request
+## Autor
+
+**Felipe Clarindo**
+
+- [LinkedIn](https://www.linkedin.com/in/felipeclarindo)
+- [Instagram](https://www.instagram.com/lipethecoder)
+- [GitHub](https://github.com/felipeclarindo)
+
+## Licença
+
+Este projeto está licenciado sob a [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
