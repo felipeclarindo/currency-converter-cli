@@ -6,13 +6,18 @@ from .utils.utils import clear_terminal
 class App:
     def __init__(self) -> None:
         """
-        Inicializa a classe Main, criando uma instância do objeto Conversor e definindo as moedas disponíveis para conversão.
+        Inicializa a classe App, criando uma instância do objeto Conversor e definindo as moedas disponíveis para conversão.
 
         Returns:
             None
         """
         self.conversor = Conversor(moeda_origem=None, moeda_destino=None, valor=None)  # Instância do objeto
-        self.moedas = {"Euro": "€", "Dolar": "USD", "Libra": "£", "Real": "BRL"}  # Moedas para conversão
+        self.moedas = {
+            "Euro": "EUR",  # Código da moeda
+            "Dólar": "USD",
+            "Libra": "GBP",
+            "Real": "BRL"
+        }  # Moedas para conversão
 
     def byFelipe(self) -> None:
         """
@@ -22,13 +27,13 @@ class App:
             None
         """
         self.clear()
-        print("""
+        print("""\
 --------------------------
 |                        |
 |  Conversor de Moedas   |
 |   by \033[1;31mFelipe Clarindo   \033[0m|
 |                        |
---------------------------
+--------------------------\
 """)
 
     def clear(self, want_input: bool) -> None:
@@ -39,7 +44,7 @@ class App:
         apropriado para limpar a tela do console. Suporta sistemas operacionais Linux, macOS (Darwin) e Windows.
 
         Args:
-            booleano (bool): Define se a função deve limpar a tela diretamente ou aguardar o usuário pressionar ENTER.
+            want_input (bool): Define se a função deve limpar a tela diretamente ou aguardar o usuário pressionar ENTER.
 
         Returns:
             None
@@ -74,17 +79,21 @@ class App:
             self.layout_menu()
 
             try:
-                print("""
-Digite de acordo com o indice!
+                print("""\
+Digite de acordo com o índice!
 [1] EURO
 [2] DOLAR
 [3] LIBRA
 [4] REAL \n""")
 
-                self.conversor.moeda_origem = int(input("Converter de: "))
-                self.conversor.validacao_moeda(self.conversor.moeda_origem)
-                self.conversor.moeda_destino = int(input("Para: "))
-                self.conversor.validacao_moeda(self.conversor.moeda_destino)
+                # Mapeia as entradas do usuário para os códigos das moedas
+                escolha_origem = int(input("Converter de: "))
+                escolha_destino = int(input("Para: "))
+                
+                # Mapeia as escolhas numéricas para os códigos das moedas
+                lista_moedas = list(self.moedas.values())
+                self.conversor.moeda_origem = lista_moedas[escolha_origem - 1]  # Código da moeda de origem
+                self.conversor.moeda_destino = lista_moedas[escolha_destino - 1]  # Código da moeda de destino
 
                 self.conversor.valor = float(input("Digite o valor a ser convertido: "))
 
@@ -93,13 +102,10 @@ Digite de acordo com o indice!
                 sleep(1)
 
                 self.clear(False)
-                lista = list(self.moedas)
-                self.conversor.conversao(self.moedas[lista[(self.conversor.moeda_origem - 1)]],
-                                         self.moedas[lista[(self.conversor.moeda_destino - 1)]])
+                self.conversor.conversao(self.conversor.moeda_origem, self.conversor.moeda_destino)
 
                 self.clear(True)
-                cont = str(input(
-                    'Deseja continuar? \nDigite \033[1;32mSim\033[0m ou \033[1;31mNão\033[0m! \n')).strip().lower()
+                cont = str(input('Deseja continuar? \nDigite \033[1;32mSim\033[0m ou \033[1;31mNão\033[0m! \n')).strip().lower()
                 if cont in ["n", "não", "nn", "nao"]:
                     self.byFelipe()
                     print("Finalizado!")
@@ -109,7 +115,7 @@ Digite de acordo com o indice!
                 sleep(1)
 
             except ValueError:
-                print(f"ValueError: O Valor inserido é ínvalido!")
+                print(f"ValueError: O valor inserido é inválido!")
                 self.clear(True)
             except Exception as e:
                 print(f"Erro: {e}")
