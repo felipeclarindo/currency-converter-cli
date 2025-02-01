@@ -1,57 +1,55 @@
-# Conversor de Moeda
+🌍 [Leia em Português](README.pt-BR.md)
 
-Um simples conversor de moeda em Python que converte entre Euro, Dólar, Libra e Real.
+# Currency Converter
 
-## Funcionalidades
+A simple currency converter in Python that converts between Euro, Dollar, Pound and Real.
 
-- Converte entre Euro, Dólar, Libra e Real.
-- Mostra a taxa de conversão atual.
+## Features
 
-## Como usar
+- Convert between Euro, Dollar, Pound and Real.
+- Shows the current conversion rate.
 
-1. Clone este repositório:
+## Steps to install and run
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/felipeclarindo/currency-converter.git
 ```
 
-2. Navegue até o diretório do projeto:
+2. Enter directory:
 
 ```bash
-cd conversor-de-moeda
+cd currency-converter
 ```
 
-3. Crie o ambiente virtual:
+3. Create the `Virtual Environment`:
 
 ```bash
 python -m venv .venv
 ```
 
-4. Ative o ambiente virtual.
+4. Activate the `Virtual Environment` running the file `.bat` located in `.venv/Scripts/activate.bat`.
 
-```bash
-./venv/Scripts/activate.bat
-```
-
-5. Instale as dependências:
+5. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-6. Execute o programa:
+6. Run the application:
 
 ```bash
 python main.py
 ```
 
-7. Siga as instruções no console para interagir com o conversor.
+7. Follow the instructions on the console to interact with the converter.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Contributions are welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-## Autor
+## Author
 
 **Felipe Clarindo**
 
@@ -59,6 +57,6 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-s
 - [Instagram](https://www.instagram.com/lipethecoder)
 - [GitHub](https://github.com/felipeclarindo)
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
+This project is licensed under the [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
