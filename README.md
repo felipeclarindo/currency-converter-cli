@@ -1,33 +1,62 @@
-# Conversor de Moeda
+🌍 [Leia em Português](README.pt-BR.md)
 
-Um simples conversor de moeda em Python que converte entre Euro, Dólar, Libra e Real.
+# Currency Converter
 
-## Funcionalidades
+A simple currency converter in Python that converts between Euro, Dollar, Pound and Real.
 
-- Converte entre Euro, Dólar, Libra e Real.
-- Mostra a taxa de conversão atual.
+## Features
 
-## Como usar
+- Convert between Euro, Dollar, Pound and Real.
+- Shows the current conversion rate.
 
-1. Clone este repositório:
-```bash 
-git clone https://github.com/felipeclarindo/conversor-de-moeda.git
+## Steps to install and run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/felipeclarindo/currency-converter-cli.git
 ```
-2. Navegue até o diretório do projeto: 
-```bash 
-cd conversor-de-moeda
+
+2. Enter directory:
+
+```bash
+cd currency-converter-cli
 ```
-3. Execute o programa: 
+
+3. Create the `Virtual Environment`:
+
+```bash
+python -m venv .venv
+```
+
+4. Activate the `Virtual Environment` running the file `.bat` located in `.venv/Scripts/activate.bat`.
+
+5. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. Run the application:
+
 ```bash
 python main.py
 ```
 
-## Contribuição
+7. Follow the instructions on the console to interact with the converter.
 
-Sinta-se à vontade para contribuir com novas funcionalidades ou correções de bugs. Basta seguir estes passos:
+## Contribution
 
-1. Fork o repositório
-2. Crie uma branch para sua feature (`git checkout -b minha-feature`)
-3. Faça o commit das suas mudanças (`git commit -am 'Adiciona nova feature'`)
-4. Faça o push para a branch (`git push origin minha-feature`)
-5. Crie um novo Pull Request
+Contributions are welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## Author
+
+**Felipe Clarindo**
+
+- [LinkedIn](https://www.linkedin.com/in/felipeclarindo)
+- [Instagram](https://www.instagram.com/lipethecoder)
+- [GitHub](https://github.com/felipeclarindo)
+
+## License
+
+This project is licensed under the [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
